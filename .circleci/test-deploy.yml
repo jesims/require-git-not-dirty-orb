@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - require-git-not-dirty/greet
+      - require-git-not-dirty/test
 workflows:
   test-deploy:
     jobs:
