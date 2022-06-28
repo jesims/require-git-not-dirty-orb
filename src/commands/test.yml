@@ -1,0 +1,18 @@
+description: Ensure there are no un-tracked changes in the supplied path
+parameters:
+  path:
+    description: Path to check
+    type: string
+    default: "."
+steps:
+  - run:
+      name: Ensure there are no un-tracked changes using `git status --porcelain` command
+      #language=bash
+      command: |
+        if ! git diff --quiet --exit-code << parameters.path >>; then
+          echo 'ERROR: Uncommitted changes'
+          git status --porcelain
+          echo '--------------------'
+          git diff
+          exit 1
+        fi
