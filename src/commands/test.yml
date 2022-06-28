@@ -1,0 +1,12 @@
+description: Ensure there are no un-tracked changes in the supplied path
+parameters:
+  path:
+    description: Path to check
+    type: string
+    default: "."
+steps:
+  - run:
+      name: Ensure there are no un-tracked changes using `git status --porcelain` command
+      environment:
+        PARAM_PATH: << parameters.path >>
+      command: <<include(scripts/require-git-not-dirty.sh)>>
