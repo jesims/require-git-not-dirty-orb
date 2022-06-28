@@ -9,6 +9,7 @@ usage:
 
   jobs:
     your-job:
+      executor: cimg/base:stable
       steps:
         - checkout
         - require-git-not-dirty/test
