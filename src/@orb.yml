@@ -1,7 +1,8 @@
 version: 2.1
 
 description: >
-  Ensure there are no un-tracked changes in the given path
+  With checked out code, and your various steps run, this orb can be used to ensure that there are no un-tracked git
+  changes in the given path.
 
 display:
   home_url: "https://github.com/jesims/require-git-not-dirty-orb"
