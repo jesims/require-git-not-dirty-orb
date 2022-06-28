@@ -1,10 +1,19 @@
 description: >
-  Sample example description.
+  Using require-git-not-dirty
+
 usage:
   version: 2.1
+
   orbs:
-    <orb-name>: jesiio/require-git-not-dirty@version
+    require-git-not-dirty: jesiio/require-git-not-dirty@0.0.1
+
   jobs:
     your-job:
       steps:
+        - checkout
         - require-git-not-dirty/test
+
+  workflows:
+    example:
+      jobs:
+        - your-job
